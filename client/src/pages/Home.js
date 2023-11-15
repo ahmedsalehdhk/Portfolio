@@ -4,7 +4,7 @@ import bgVideo from '../assets/background.mp4'
 
 export default function home() {
   return (
-    <div className='master-container h-screen w-screen flex justify-center items-center p-5 bg-black/70'>
+    <div className='master-container h-screen w-screen flex justify-center items-center p-5 bg-black/60'>
         <video src={bgVideo} className='absolute object-cover h-screen w-screen -z-10 top-0 left-0 overflow-x-hidden' autoPlay loop muted></video>
         <div className="home h-full w-full rounded-xl flex p-6 shadow-xl text-white">
             <div className="info-container w-3/12 border border-neutral-600 rounded-2xl p-16 flex flex-col justify-between">
