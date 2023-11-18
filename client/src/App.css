@@ -1,1 +1,10 @@
 
+.tech-stacks div{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#Figma{
+    background-image: url('./assets/stacks/figma.png');
+}

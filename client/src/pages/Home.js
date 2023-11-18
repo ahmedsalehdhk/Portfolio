@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaInstagram, FaBehanceSquare, FaGithub, FaHome, FaUser } from "react-icons/fa";
+import { FaInstagram, FaBehanceSquare, FaGithub, FaHome, FaUser, FaBookOpen, FaPencilRuler } from "react-icons/fa";
 import { motion } from "framer-motion"
 import bgVideo from '../assets/background.mp4'
 
@@ -30,20 +30,77 @@ export default function home() {
             </div>
             <div className="content-container bg-neutral-5000 w-9/12 px-32 py-16 overflow-y-scroll">
                 <div className="introduction mb-32">
-                    <h3 className='mb-16 border w-fit px-5 py-1 rounded-full uppercase flex justify-center items-center gap-2'><FaHome />Introduce</h3>
+                    <h3 className='mb-16 border w-fit px-5 py-1 rounded-full uppercase flex justify-center items-center gap-2'><FaHome />Introduction</h3>
                     <h1 className='mb-10 text-6xl font-medium'>Hi. This is <span className='text-accent'>Saleh</span>, <br/>Designer and Developer.</h1>
                     <p className='text-neutral-400'>I design minimal design elements, and I love what I do.<br/> It's simple like that!</p>
                 </div>
                 <div className="about mb-32">
                     <h3 className='mb-16 border w-fit px-5 py-1 rounded-full uppercase flex justify-center items-center gap-2'><FaUser />About</h3>
                     <h2 className='mb-10 text-4xl'>Every great design begins with<br/> an even <span className='text-accent'>better story</span></h2>
-                    <p className='text-neutral-400 w-3/4'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt eligendi vel, quibusdam sit quo culpa voluptates, quisquam at optio libero ducimus distinctio voluptas veritatis modi non nesciunt commodi molestiae! Possimus?</p>
+                    <p className='text-neutral-400 w-3/4 mb-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt eligendi vel, quibusdam sit quo culpa voluptates, quisquam at optio libero ducimus distinctio voluptas veritatis modi non nesciunt commodi molestiae! Possimus?</p>
+                    <p className='mb-5 border-b w-fit'>What I Do</p>
+                    <ul className='flex gap-8'>
+                        <li className=''>Web Design</li>
+                        <li>Frontend Web Development</li>
+                        <li>UI/UX</li>
+                    </ul>
                 </div>
                 <div className="experience mb-32">
-                    <h3 className='mb-16 border w-fit px-5 py-1 rounded-full uppercase flex justify-center items-center gap-2'><FaUser />Background</h3>
+                    <h3 className='mb-16 border w-fit px-5 py-1 rounded-full uppercase flex justify-center items-center gap-2'><FaBookOpen />Background</h3>
                     <h2 className='mb-10 text-4xl'>Education and <span className='text-accent'>Experience</span></h2>
-
+                    <ul className='flex flex-col gap-8'>
+                        <li>Executive - Alliance Properties Ltd.<br/><span className='text-accent'>2023 - Present</span></li>
+                        <li>Bachelors Degree on Computer Science & Technology<br/><span>North South University</span><br/><span className='text-neutral-400'>2018 - 2023</span></li>
+                        <li>Web Developer Intern - LIFE<br/><span className='text-neutral-400'>2021 - 2022</span></li>
+                        <li>Graphic Design Intern - IndusVedic<br/><span className='text-neutral-400'>2019 - 2020</span></li>
+                    </ul>
                 </div>
+                <div className="projects mb-32">
+                    <h3 className='mb-16 border w-fit px-5 py-1 rounded-full uppercase flex justify-center items-center gap-2'><FaPencilRuler />Portfolio</h3>
+                    <h2 className='mb-10 text-4xl'><span className='text-accent'>Featured</span> Projects</h2>
+                    <div className="projects-container flex flex-col gap-8">
+                        <div className="project-1">
+                            <div className="display-image h-64 w-1/2 min-w-fit rounded-xl bg-black mb-3 cursor-pointer flex justify-start items-end gap-3 p-5">
+                                <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>Tensorflow.js</p>
+                                <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>YOLOV4</p>
+                                <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>Android Studio</p>
+                            </div>
+                            <h3>Project Drishti</h3>
+                            <p className='text-neutral-400'>App for the visually impaired</p>
+                        </div>
+                        <div className="project-2">
+                            <div className="display-image h-64 w-1/2 min-w-fit rounded-xl bg-black mb-3 cursor-pointer flex justify-start items-end gap-3 p-5">
+                                <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>Figma</p>
+                                <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>MERN</p>
+                            </div>
+                            <h3>TeamFlow</h3>
+                            <p className='text-neutral-400'>Team managemnt software</p>
+                        </div>
+                        <div className="project-3">
+                            <div className="display-image h-64 w-1/2 min-w-fit rounded-xl bg-black mb-3 cursor-pointer flex justify-start items-end gap-3 p-5">
+                                <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>Figma</p>
+                                <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>React</p>
+                            </div>
+                            <h3>Proteron Digital</h3>
+                            <p className='text-neutral-400'>Tech Startup Website</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="stacks mb-32">
+                    <h3 className='mb-16 border w-fit px-5 py-1 rounded-full uppercase flex justify-center items-center gap-2'><FaPencilRuler />My Skills</h3>
+                    <h2 className='mb-10 text-4xl'>Technology <span className='text-accent'>Stacks</span></h2>
+                    <div className="tech-stacks flex justify-start items-start flex-wrap gap-5">
+                        <div className="stack-1 rounded h-20 w-48 min-w-fit bg-white" id='Figma'></div>
+                        <div className="stack-1 rounded h-20 w-48 bg-white" id='React'></div>
+                        <div className="stack-1 rounded h-20 w-48 bg-white" id='Node'></div>
+                        <div className="stack-1 rounded h-20 w-48 bg-white" id='MongoDB'></div>
+                        <div className="stack-1 rounded h-20 w-48 bg-white" id='Framer'></div>
+                        <div className="stack-1 rounded h-20 w-48 bg-white" id=''></div>
+                    </div>
+                </div>
+                <div className="contact mb-32"></div>
+                    <h3 className='mb-16 border w-fit px-5 py-1 rounded-full uppercase flex justify-center items-center gap-2'><FaPencilRuler />Contact</h3>
+                    <h2 className='mb-10 text-4xl'>Let's have a cup of <span className='text-accent'>coffee</span></h2>
             </div>
         </div>
     </div>
