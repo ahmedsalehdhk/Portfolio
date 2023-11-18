@@ -60,7 +60,7 @@ export default function home() {
                     <h2 className='mb-10 text-4xl'><span className='text-accent'>Featured</span> Projects</h2>
                     <div className="projects-container flex flex-col gap-8">
                         <div className="project-1">
-                            <div className="display-image h-64 w-full  lg:w-1/2 rounded-xl bg-black mb-3 cursor-pointer flex flex-col md:flex-row justify-start items-end flex-wrap gap-3 px-3">
+                            <div className="display-image h-64 w-full lg:w-3/4 rounded-xl bg-black mb-3 cursor-pointer flex flex-col lg:flex-row justify-start items-end flex-wrap gap-3 p-3">
                                 <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>Tensorflow.js</p>
                                 <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>YOLOV4</p>
                                 <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium whitespace-nowrap'>Android Studio</p>
@@ -69,7 +69,7 @@ export default function home() {
                             <p className='text-neutral-400'>App for the visually impaired</p>
                         </div>
                         <div className="project-2">
-                            <div className="display-image h-64 w-full min-w-fit lg:w-1/2 rounded-xl bg-black mb-3 cursor-pointer flex flex-col md:flex-row  justify-start items-end gap-3 p-5">
+                            <div className="display-image h-64 w-full min-w-fit lg:w-3/4 rounded-xl bg-black mb-3 cursor-pointer flex flex-col md:flex-row  justify-start items-end gap-3 p-5">
                                 <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>Figma</p>
                                 <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>MERN</p>
                             </div>
@@ -77,7 +77,7 @@ export default function home() {
                             <p className='text-neutral-400'>Team managemnt software</p>
                         </div>
                         <div className="project-3">
-                            <div className="display-image h-64 w-full min-w-fit lg:w-1/2 rounded-xl bg-black mb-3 cursor-pointer flex flex-col md:flex-row  justify-start items-end gap-3 p-5">
+                            <div className="display-image h-64 w-full min-w-fit lg:w-3/4 rounded-xl bg-black mb-3 cursor-pointer flex flex-col md:flex-row  justify-start items-end gap-3 p-5">
                                 <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>Figma</p>
                                 <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>React</p>
                             </div>
@@ -89,7 +89,7 @@ export default function home() {
                 <div className="stacks mb-32">
                     <h3 className='mb-16 border w-fit px-5 py-1 rounded-full uppercase flex justify-center items-center gap-2'><FaPencilRuler />My Skills</h3>
                     <h2 className='mb-10 text-4xl'>Technology <span className='text-accent'>Stacks</span></h2>
-                    <div className="tech-stacks flex justify-start items-start flex-wrap gap-5 w-full md:w-3/4">
+                    <div className="tech-stacks flex justify-start items-start flex-wrap gap-3 w-full md:w-3/4">
                         <div className="stack-1 rounded h-20 w-48 bg-white" id='Figma'></div>
                         <div className="stack-1 rounded h-20 w-48 bg-white" id='React'></div>
                         <div className="stack-1 rounded h-20 w-48 bg-white" id='Node'></div>
