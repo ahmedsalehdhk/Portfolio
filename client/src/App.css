@@ -1,23 +1,30 @@
 
+.image-container{
+
+}
+
 .tech-stacks div{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-#Figma{
+#figma {
     background-image: url('./assets/stacks/figma.png');
 }
-#React {
+#mongoDB {
+    background-image: url('./assets/stacks/mongoDB.png');
+}
+#express {
+    background-image: url('./assets/stacks/express.png');
+}
+#react {
     background-image: url('./assets/stacks/react.png');
 }
-#Node {
-    background-image: url('./assets/stacks/node.png');
+#nodeJS {
+    background-image: url('./assets/stacks/nodeJS.png');
 }
-#MongoDB {
-    background-image: url('./assets/stacks/MongoDB.png');
-}
-#Framer {
-    background-image: url('./assets/stacks/Framer.png');
+#framer {
+    background-image: url('./assets/stacks/framer.png');
 }
 
