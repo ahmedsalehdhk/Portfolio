@@ -84,12 +84,12 @@ export default function Home() {
                             <p className='text-neutral-400'>Team managemnt software</p>
                         </motion.div>
                         <motion.div className="project-3" initial={{y: 100, opacity: 0}} whileInView={{y: 0, opacity: 1}}  transition={{ease: easeInOut, duration: 0.8}} viewport={{ once: true }}>
-                            <div className="display-image h-64 w-full min-w-fit lg:w-3/4 rounded-xl bg-black mb-3 flex flex-col md:flex-row  justify-start items-end gap-3 p-5">
+                            <div className="display-image h-64 w-full min-w-fit lg:w-3/4 rounded-xl bg-black mb-3 flex flex-col md:flex-row  justify-start items-end gap-3 p-5 bg-cover" id='proteronDigital'>
                                 <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>Figma</p>
                                 <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>React</p>
                             </div>
                             <h3>Proteron Digital</h3>
-                            <p className='text-neutral-400'>Tech Startup Website</p>
+                            <p className='text-neutral-400'>Software startup website</p>
                         </motion.div>
                     </div>
                 </motion.div>

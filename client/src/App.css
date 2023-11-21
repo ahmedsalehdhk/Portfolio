@@ -3,6 +3,10 @@
 
 }
 
+#proteronDigital {
+    background-image: url('./assets/projects/proterondigital.png');
+}
+
 .tech-stacks div{
     background-size: contain;
     background-repeat: no-repeat;
