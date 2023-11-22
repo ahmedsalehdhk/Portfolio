@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { easeInOut, motion } from "framer-motion"
 import { FaInstagram, FaBehanceSquare, FaGithub, FaHome, FaUser, FaBookOpen, FaPencilRuler, FaEnvelope } from "react-icons/fa";
 import bgVideo from '../assets/background.mp4'
@@ -8,6 +8,23 @@ export default function Home() {
     //scrolling to contact view on hire me button click
     const contactRef = useRef()
     const executeScroll = () => contactRef.current.scrollIntoView({ block: 'end',  behavior: 'smooth' });
+
+    const titles = ['software engineer', 'designer', 'developer']
+    const ChangingTitles = () => {
+        const [index, setIndex] = useState(0)
+        useEffect(() => {
+            if (index == titles.length -1){
+                return setTimeout(() => {
+                    setIndex(index + 1)
+                }, 1000)
+            }
+        }, [index])
+        
+        return (
+            <h1>{titles[index]}</h1>
+        )
+
+    }
 
   return (
     <div className='master-container h-screen w-screen flex justify-center items-center p-4 bg-black/75'>
@@ -36,7 +53,7 @@ export default function Home() {
             <div className="content-container w-full lg:w-9/12 px-2 lg:px-32 py-16 overflow-y-scroll">
                 <motion.div className="introduction mb-32" initial={{y: 100, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{ease: easeInOut, duration: 0.8, delay: 1}} viewport={{ once: true }}>
                     <h3 className='mb-16 border w-fit px-5 py-1 rounded-full uppercase flex justify-center items-center gap-2'><FaHome />Introduction</h3>
-                    <h1 className='mb-10 text-4xl md:text-6xl font-medium'>Hi. This is <span className='text-accent'>Saleh</span>, <br/>Software Engineer and Designer.</h1>
+                    <h1 className='mb-10 text-4xl md:text-6xl font-medium'>Hi. This is <span className='text-accent'>Saleh</span>, <br/>{ChangingTitles}</h1>
                     <p className='text-neutral-400'>I design and build minimal, beautiful software.<br/>It's simple and I love it!</p>
                 </motion.div>
                 <motion.div className="about mb-32" initial={{y: 100, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{ease: easeInOut, duration: 0.8, delay: 1.2}} viewport={{ once: true }}>
