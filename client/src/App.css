@@ -1,12 +1,20 @@
 
 .image-container{
-
+    background-image: url("./assets/salehahmed.jpg");
 }
 
+/* PORTFOLIO */
 #proteronDigital {
     background-image: url('./assets/projects/proterondigital.png');
 }
+#teamflow{
+    background-image: url('./assets/projects/teamflow.png');
+}
+#projectDrishti{
+    background-image: url('./assets/projects/projectdrishti.png');
+}
 
+/* TECHNOLOGY STACKS */
 .tech-stacks div{
     background-size: contain;
     background-repeat: no-repeat;
@@ -15,6 +23,9 @@
 
 #figma {
     background-image: url('./assets/stacks/figma.png');
+}
+#illustrator {
+    background-image: url('./assets/stacks/illustrator.png');
 }
 #mongoDB {
     background-image: url('./assets/stacks/mongoDB.png');
@@ -25,8 +36,14 @@
 #react {
     background-image: url('./assets/stacks/react.png');
 }
+#reactnative {
+    background-image: url('./assets/stacks/reactnative.png');
+}
 #nodeJS {
     background-image: url('./assets/stacks/nodeJS.png');
+}
+#tailwindcss{
+    background-image: url('./assets/stacks/tailwindcss.png');
 }
 #framer {
     background-image: url('./assets/stacks/framer.png');
