@@ -31,18 +31,19 @@ export default function Home() {
     <div className='master-container h-screen w-screen flex justify-center items-center p-4 bg-black/75'>
         <video src={bgVideo} className='fixed object-cover h-screen w-screen -z-10 top-0 left-0 overflow-x-hidden' autoPlay loop muted></video>
         <div className="home h-full w-full rounded-xl flex shadow-xl text-white">
-            <motion.div className="info-container w-3/12 min-w-fit border border-neutral-500 rounded-2xl p-16 hidden lg:flex flex-col justify-between" initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{ease: easeInOut, duration: 0.5}} >
+            {/* INFO */}
+            <motion.div className="info-container w-3/12 min-w-fit  h-full min-h-fit border border-neutral-500 rounded-2xl p-16 hidden lg:flex flex-col justify-between gap-5" initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{ease: easeInOut, duration: 0.5}} >
                 <div className="intro-text">
                     <h3 className='text-neutral-400 font-medium'>Designer & Engineer</h3>
                     <h1 className='font-light text-4xl'>Saleh Ahmed</h1>
                 </div>
-                <div className="image-container bg-neutral-900 rounded-2xl h-64 w-full self-center flex justify-center items-center bg-cover"></div>
+                <div className="image-container bg-neutral-900 rounded-full h-64 w-64 min-h-[280px] min-w-[280px] self-center flex justify-center items-center bg-cover bg-center"></div>
                 <div className="contact-text mb-20 text-center">
-                    <h2 className='font-medium text-[1.2rem]'>CS Graduate, NSU</h2>
-                    <h2 className='font-medium text-[1.2rem] mb-5'><a href="/">ahmedsalehdhk@gmail.com</a></h2>
+                    <h2 className='font-medium text-[1.2rem]'>CSE, NSU</h2>
+                    <h2 className='font-medium text-[1.2rem] mb-5'>ahmedsalehdhk@gmail.com</h2>
                     <h3 className='text-neutral-400 font-medium'>Dhaka, Bangladesh</h3>
                 </div>
-                <div className="social-links flex justify-evenly">
+                <div className="social-links flex justify-center gap-5">
                     <a href='https://github.com/ahmedsalehdhk' className='border border-neutral-400 rounded-full h-16 w-16 hover:bg-black flex justify-center items-center'><FaGithub size={25} /></a>
                     <a href='https://www.instagram.com/ahmedsalehdhk2023' className='border border-neutral-400 rounded-full h-16 w-16 hover:bg-black flex justify-center items-center'><FaInstagram size={25} /></a>
                     <a href='https://www.behance.net/ahmedsalehdhk' className='border border-neutral-400 rounded-full h-16 w-16 hover:bg-black flex justify-center items-center'><FaBehanceSquare size={25} /></a>
@@ -51,6 +52,7 @@ export default function Home() {
                     <motion.button onClick={executeScroll} whileTap={{scale: 0.9}} className='bg-accent border border-neutral-500 rounded-full w-full h-12 text-black font-bold '>Hire Me</motion.button>
                 </div>
             </motion.div>
+            {/* CONTENT */}
             <div className="content-container w-full lg:w-9/12 px-2 lg:px-32 py-16 overflow-y-scroll">
                 <motion.div className="introduction mb-32" initial={{y: 100, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{ease: easeInOut, duration: 0.8, delay: 1}} viewport={{ once: true }}>
                     <h3 className='mb-16 border w-fit px-5 py-1 rounded-full uppercase flex justify-center items-center gap-2'><FaHome />Introduction</h3>
