@@ -6,11 +6,11 @@ import { variants } from '../animations/animation';
 
 export default function Home() {
     
-    //scrolling to contact view on hire me button click
+    // scrolling to contact view on hire me button click
     const contactRef = useRef()
     const executeScroll = () => contactRef.current.scrollIntoView({ block: 'end',  behavior: 'smooth' });
 
-    //changing titles function
+    // changing titles function
     const titles = ["software engineer.", "web designer.", "web developer.", "app developer."];
     const [index, setIndex] = useState(0);
     const ChangingTitles = () => {
@@ -27,17 +27,25 @@ export default function Home() {
       return titles[index]
     };
 
+    // tech stacks carousel
+    const [width, setWidth] = useState(0);
+    const carousel = useRef(null);
+
+    useEffect(() => {
+        setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+    }, []);
+
   return (
     <div className='master-container h-screen w-screen flex justify-center items-center p-4 bg-black/75'>
-        <video src={bgVideo} className='fixed object-cover h-screen w-screen -z-10 top-0 left-0 overflow-x-hidden' autoPlay loop muted></video>
+        <video src={bgVideo} className='fixed object-cover h-screen w-screen -z-10 top-0 left-0 overflow-x-hidden' autoPlay playsinline loop muted></video>
         <div className="home h-full w-full rounded-xl flex shadow-xl text-white">
             {/* INFO */}
-            <motion.div className="info-container w-3/12 min-w-fit  h-full min-h-fit border border-neutral-500 rounded-2xl p-16 hidden lg:flex flex-col justify-between gap-5" initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{ease: easeInOut, duration: 0.5}} >
+            <motion.div className="info-container w-3/12 min-w-fit h-full min-h-fit border border-neutral-500 rounded-2xl p-16 hidden lg:flex flex-col justify-between gap-5 overflow-y-hidden" initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{ease: easeInOut, duration: 0.5}} >
                 <div className="intro-text">
                     <h3 className='text-neutral-400 font-medium'>Designer & Engineer</h3>
                     <h1 className='font-light text-4xl'>Saleh Ahmed</h1>
                 </div>
-                <div className="image-container bg-neutral-900 rounded-full h-64 w-64 min-h-[280px] min-w-[280px] self-center flex justify-center items-center bg-cover bg-center"></div>
+                <div className="image-container bg-neutral-900 rounded-full h-52 w-52 min-h-[250px] min-w-[250px] self-center flex justify-center items-center bg-cover bg-center"></div>
                 <div className="contact-text mb-20 text-center">
                     <h2 className='font-medium text-[1.2rem]'>CSE, NSU</h2>
                     <h2 className='font-medium text-[1.2rem] mb-5'>ahmedsalehdhk@gmail.com</h2>
@@ -65,12 +73,11 @@ export default function Home() {
                     <p className='text-neutral-400 w-full md:w-3/4 mb-5 md:text-justify'>My creative journey echoes the wonder of discovering storytelling through my sketchbooks as a child. Today, each project is a canvas to recreate that magic, infusing every pixel with purpose. Join me in this exciting landscape, where code and design elements converge, contributing to stories waiting to unfold.</p>
                     <p className='mb-5 border-b w-fit'>What I Do</p>
                     <ul className='flex gap-8 flex-wrap text-neutral-400'>
-                        <li>Software Engineering</li>
+                        <li>Software Development</li>
                         <li>Web Design</li>
                         <li>Web Development</li>
                         <li>App Development</li>
                         <li>UI/UX</li>
-                        <li>Framer Animations</li>
                     </ul>
                 </motion.div>
                 <motion.div className="experience mb-32" initial={{y: 100, opacity: 0}} whileInView={{y: 0, opacity: 1}}  transition={{ease: easeInOut, duration: 0.8}} viewport={{ once: true }}>
@@ -88,46 +95,57 @@ export default function Home() {
                     <h2 className='mb-10 text-4xl'><span className='text-accent'>Featured</span> Projects</h2>
                     <div className="projects-container flex flex-col gap-8">
                         <motion.div className="project-1" initial={{y: 100, opacity: 0}} whileInView={{y: 0, opacity: 1}}  transition={{ease: easeInOut, duration: 0.8}} viewport={{ once: true }}>
-                            <div className="display-image h-64 w-full lg:w-3/4 rounded-xl bg-black mb-3 flex flex-col lg:flex-row justify-start items-end flex-wrap gap-3 p-5 bg-cover bg-center" id='projectDrishti'>
-                                <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>Tensorflow.js</p>
-                                <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>YOLOV4</p>
-                                <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium whitespace-nowrap'>Android Studio</p>
+                            <div className='h-64 w-full lg:w-3/4 rounded-xl overflow-hidden mb-3 relative'>
+                                <div className="overlay h-full w-full absolute top-0 left-0 bg-transparent hover:bg-black/25 cursor-pointer"></div>
+                                <div className="display-image h-full w-full flex flex-col lg:flex-row justify-start items-end flex-wrap gap-3 p-5 bg-cover bg-center" id='projectDrishti'>
+                                    <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>Tensorflow.js</p>
+                                    <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>YOLOV4</p>
+                                    <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium whitespace-nowrap'>Android Studio</p>
+                                </div>
                             </div>
                             <h3>Project Drishti</h3>
                             <p className='text-neutral-400'>App for the visually impaired</p>
                         </motion.div>
                         <motion.div className="project-2" initial={{y: 100, opacity: 0}} whileInView={{y: 0, opacity: 1}}  transition={{ease: easeInOut, duration: 0.8}} viewport={{ once: true }}>
-                            <div className="display-image h-64 w-full min-w-fit lg:w-3/4 rounded-xl bg-black mb-3 flex flex-col md:flex-row  justify-start items-end gap-3 p-5 bg-cover bg-center" id='teamflow'>
-                                <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>Figma</p>
-                                <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>MERN</p>
-                            </div>
-                            <h3>TeamFlow</h3>
-                            <p className='text-neutral-400'>Team managemnt software</p>
-                        </motion.div>
-                        <motion.div className="project-3" initial={{y: 100, opacity: 0}} whileInView={{y: 0, opacity: 1}}  transition={{ease: easeInOut, duration: 0.8}} viewport={{ once: true }}>
-                            <div className="display-image h-64 w-full min-w-fit lg:w-3/4 rounded-xl bg-black mb-3 flex flex-col md:flex-row  justify-start items-end gap-3 p-5 bg-cover" id='proteronDigital'>
-                                <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>Figma</p>
-                                <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>React</p>
+                            <div className='h-64 w-full lg:w-3/4 rounded-xl overflow-hidden mb-3 relative'>
+                                <div className="overlay h-full w-full absolute top-0 left-0 bg-transparent hover:bg-black/25 cursor-pointer"></div>
+                                <div className="display-image h-full w-full flex flex-col lg:flex-row justify-start items-end flex-wrap gap-3 p-5 bg-cover bg-top" id='proteronDigital'>
+                                    <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>Figma</p>
+                                    <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>React</p>
+                                </div>
                             </div>
                             <h3>Proteron Digital</h3>
                             <p className='text-neutral-400'>Software startup website</p>
+                        </motion.div>
+                        <motion.div className="project-3" initial={{y: 100, opacity: 0}} whileInView={{y: 0, opacity: 1}}  transition={{ease: easeInOut, duration: 0.8}} viewport={{ once: true }}>
+                            <div className='h-64 w-full lg:w-3/4 rounded-xl overflow-hidden mb-3 relative'>
+                                <div className="overlay h-full w-full absolute top-0 left-0 bg-transparent hover:bg-black/25 cursor-pointer"></div>
+                                <div className="display-image h-full w-full flex flex-col lg:flex-row justify-start items-end flex-wrap gap-3 p-5 bg-cover bg-center" id='teamflow'>
+                                    <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>Figma</p>
+                                    <p className='border h-fit w-fit px-3 py-1 rounded-full bg-white text-black font-medium'>MERN</p>
+                                </div>
+                            </div>
+                            <h3>TeamFlow</h3>
+                            <p className='text-neutral-400'>Team managemnt software</p>
                         </motion.div>
                     </div>
                 </motion.div>
                 <motion.div className="stacks mb-32"  initial={{y: 100, opacity: 0}} whileInView={{y: 0, opacity: 1}}  transition={{ease: easeInOut, duration: 0.8}} viewport={{ once: true }}>
                     <h3 className='mb-16 border w-fit px-5 py-1 rounded-full uppercase flex justify-center items-center gap-2'><FaPaintBrush />My Skills</h3>
                     <h2 className='mb-10 text-4xl'>Technology <span className='text-accent'>Stacks</span></h2>
-                    <div className="tech-stacks flex justify-center md:justify-start items-start flex-wrap gap-3 w-full md:w-3/4">
-                        <div className="stack-1 rounded h-20 w-48 bg-white" id='figma'></div>
-                        <div className="stack-1 rounded h-20 w-48 bg-white" id='illustrator'></div>
-                        <div className="stack-1 rounded h-20 w-48 bg-white" id='mongoDB'></div>
-                        <div className="stack-1 rounded h-20 w-48 bg-white" id='express'></div>
-                        <div className="stack-1 rounded h-20 w-48 bg-white" id='react'></div>
-                        <div className="stack-1 rounded h-20 w-48 bg-white" id='nodeJS'></div>
-                        <div className="stack-1 rounded h-20 w-48 bg-white" id='reactnative'></div>
-                        <div className="stack-1 rounded h-20 w-48 bg-white" id='tailwindcss'></div>
-                        <div className="stack-1 rounded h-20 w-48 bg-white" id='framer'></div>
-                    </div>
+                    <motion.div ref={carousel} className='outer-carousel cursor-grab outline-none w-full md:w-3/4 overflow-hidden' whileTap={{ cursor: "grabbing" }}>
+                        <motion.div className="tech-stacks inner-carousel inline-flex gap-3" drag="x" dragConstraints={carousel}>
+                            <div className="stack-1 rounded h-20 min-h-[100px] w-48 min-w-[180px] bg-white" id='figma'></div>
+                            <div className="stack-1 rounded h-20 min-h-[100px] w-48 min-w-[180px] bg-white" id='illustrator'></div>
+                            <div className="stack-1 rounded h-20 min-h-[100px] w-48 min-w-[180px] bg-white" id='mongoDB'></div>
+                            <div className="stack-1 rounded h-20 min-h-[100px] w-48 min-w-[180px] bg-white" id='express'></div>
+                            <div className="stack-1 rounded h-20 min-h-[100px] w-48 min-w-[180px] bg-white" id='react'></div>
+                            <div className="stack-1 rounded h-20 min-h-[100px] w-48 min-w-[180px] bg-white" id='nodeJS'></div>
+                            <div className="stack-1 rounded h-20 min-h-[100px] w-48 min-w-[180px] bg-white" id='reactnative'></div>
+                            <div className="stack-1 rounded h-20 min-h-[100px] w-48 min-w-[180px] bg-white" id='tailwindcss'></div>
+                            <div className="stack-1 rounded h-20 min-h-[100px] w-48 min-w-[180px] bg-white" id='framer'></div>
+                        </motion.div>
+                    </motion.div>
                 </motion.div>
                 <motion.div className="contact mb-16" id='contact' ref={contactRef}  initial={{y: 100, opacity: 0}} whileInView={{y: 0, opacity: 1}}  transition={{ease: easeInOut, duration: 0.8}} viewport={{ once: true }}>
                     <h3 className='mb-16 border w-fit px-5 py-1 rounded-full uppercase flex justify-center items-center gap-2'><FaEnvelope />Contact</h3>
