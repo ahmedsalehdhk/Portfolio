@@ -49,20 +49,19 @@ export default function Home() {
   return (
     <div className='master-container h-screen w-screen flex justify-center items-center p-4 bg-black/75'>
         <video src={bgVideo} className='fixed object-cover h-screen w-screen -z-10 top-0 left-0 overflow-x-hidden' autoPlay playsInline loop muted></video>
-        <div className="home h-full w-full rounded-xl flex shadow-xl text-white">
+        <div className="home h-full w-full flex text-white">
             {/* INFO */}
-            <motion.div className="info-container w-3/12 min-w-fit h-full min-h-fit border border-neutral-500 rounded-2xl p-16 hidden lg:flex flex-col justify-between gap-5 overflow-y-hidden" initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{ease: easeInOut, duration: 0.5}} >
-                
+            <motion.div className="info-container w-3/12 min-w-fit h-full min-h-fit border border-neutral-500 rounded-2xl p-16 hidden lg:flex flex-col justify-between gap-3 overflow-y-hidden" initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{ease: easeInOut, duration: 0.5}} >
                 <div className="intro-text mb-5">
                     <h3 className='text-neutral-400 font-medium'>Designer & Engineer</h3>
-                    <h1 className='font-light text-4xl'>Saleh Ahmed</h1>
-                </div>
-                <div className='profile flex flex-col mb-5'>
-                    <div className="image-container bg-neutral-900 rounded-full h-32 w-32 min-h-[200px] min-w-[200px] self-center flex justify-center items-center bg-cover bg-center mb-5"></div>
-                    <div className="contact-text text-center">
-                        <h2 className='font-medium text-[1.2rem]'>CSE, NSU</h2>
-                        <h2 className='font-medium text-[1.2rem] mb-5'>ahmedsalehdhk@gmail.com</h2>
-                        <h3 className='text-neutral-400 font-medium'>Dhaka, Bangladesh</h3>
+                    <h1 className='font-light text-4xl mb-12'>Saleh Ahmed</h1>
+                    <div className='profile flex flex-col mb-5'>
+                        <div className="image-container bg-neutral-900 rounded-full h-32 w-32 min-h-[200px] min-w-[200px] self-center flex justify-center items-center bg-cover bg-center mb-5"></div>
+                        <div className="contact-text text-center">
+                            <h2 className='font-medium text-[1.2rem]'>CSE, NSU</h2>
+                            <h2 className='font-medium text-[1.2rem] mb-3'>ahmedsalehdhk@gmail.com</h2>
+                            <h3 className='text-neutral-400 font-medium'>Dhaka, Bangladesh</h3>
+                        </div>
                     </div>
                 </div>
                 <div className='socials'>
@@ -108,7 +107,7 @@ export default function Home() {
                         <li>Graphic Design Intern - IndusVedic<br/><span className='text-neutral-400'>2019 - 2020</span></li>
                     </ul>
                 </motion.div>
-                <motion.div className="projects mb-32" initial={{y: 100, opacity: 0}} whileInView={{y: 0, opacity: 1}}  transition={{ease: easeInOut, duration: 0.8}} viewport={{ once: true }}>
+                <motion.div className="projects mb-32" initial={{y: 100, opacity: 0}} whileInView={{y: 0, opacity: 1}}  transition={{ease: easeInOut, duration: 0.8}} viewport={{ once: true }} id='projects'>
                     <img src={block} alt="" className='h-4 mb-2' />
                     <h3 className='mb-16 w-fit uppercase whitespace-nowrap'>Portfolio</h3>                    
                     <h2 className='mb-10 text-4xl'><span className='text-accent'>Featured</span> Projects</h2>

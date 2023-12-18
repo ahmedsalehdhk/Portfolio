@@ -7,7 +7,7 @@
 }
 
 /* PORTFOLIO */
-#proteron-digital {
+/* #proteron-digital {
   background-image: url("./assets/projects/proterondigital.png");
 }
 
@@ -17,7 +17,7 @@
 
 #project-drishti {
   background-image: url("./assets/projects/projectdrishti.png");
-}
+} */
 
 /* TECHNOLOGY STACKS */
 .tech-stacks div {
@@ -26,7 +26,7 @@
   background-position: center;
 }
 
-#figma {
+/* #figma {
   background-image: url("./assets/stacks/figma.png");
 }
 
@@ -60,4 +60,4 @@
 
 #framer {
   background-image: url("./assets/stacks/framer.png");
-}
+} */
